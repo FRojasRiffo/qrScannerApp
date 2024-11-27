@@ -1,0 +1,7 @@
+npm install --force
+ionic s
+cd jsonServer
+npx json-server --watch db.json --port 3000
+ionic build
+ionic capacitor run android -l --host=0.0.0.0
+ionic capacitor open android
