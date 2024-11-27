@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <b>Asignaturas Docente</b>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Asignaturas Docente</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let asignatura of asignaturasDocente">
+      <ion-label>
+        <h2>{{ asignatura.nombre }}</h2>
+        <p>Sección: {{ asignatura.seccion }} - Sigla: {{ asignatura.sigla }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

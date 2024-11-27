@@ -1,0 +1,92 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "correo": "juan.perez@duocuc.cl",
+      "contraseña": "pancito123",
+      "tipo": "docente"
+    },
+    {
+      "id": "2",
+      "correo": "pedro.juanes@duocuc.cl",
+      "contraseña": "pancito123",
+      "tipo": "docente"
+    },
+    {
+      "id": "3",
+      "correo": "ana.garcia@duocuc.cl",
+      "contraseña": "123",
+      "tipo": "estudiante"
+    },
+    {
+      "id": "4",
+      "correo": "pan.garcia@duocuc.cl",
+      "contraseña": "contrasena1234",
+      "tipo": "estudiante"
+    }
+  ],
+  "asignaturas": [
+    {
+      "id": "101",
+      "nombre": "Programación",
+      "sigla": "PGY101",
+      "seccion": "001D",
+      "docente_id": 1,
+      "estudiante_id": 3
+    },
+    {
+      "id": "102",
+      "nombre": "Programación",
+      "sigla": "PGY101",
+      "seccion": "002D",
+      "docente_id": 1,
+      "estudiante_id": 4
+    },
+    {
+      "id": "103",
+      "nombre": "BD",
+      "sigla": "BDY101",
+      "seccion": "002D",
+      "docente_id": 2,
+      "estudiante_id": 4
+    },
+    {
+      "id": "104",
+      "nombre": "BD",
+      "sigla": "BDY101",
+      "seccion": "001D",
+      "docente_id": 1,
+      "estudiante_id": 3
+    }
+  ],
+  "asistencias": [
+    {
+      "id": "0082",
+      "asignaturaId": "101",
+      "estudiante_id": 0,
+      "fecha": "2024-10-26T14:30:00Z",
+      "estado": "Presente"
+    },
+    {
+      "id": "3704",
+      "asignaturaId": "104",
+      "estudiante_id": 3,
+      "fecha": "11/13/2024, 1:33:58 AM",
+      "estado": "Presente"
+    },
+    {
+      "id": "a234",
+      "asignaturaId": "104",
+      "estudiante_id": 3,
+      "fecha": "11/25/2024, 4:59:00 PM",
+      "estado": "Presente"
+    },
+    {
+      "id": "f07d",
+      "asignaturaId": "104",
+      "estudiante_id": 3,
+      "fecha": "11/26/2024, 2:45:27 PM",
+      "estado": "Presente"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <b>Crear QR</b>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content-center">
+  <!-- Listado de asignaturas -->
+  <ion-list class="asignaturas-list">
+    <ion-item *ngFor="let asignatura of asignaturas" (click)="generarQr(asignatura)">
+      {{ asignatura.nombre }} {{ asignatura.seccion }}
+    </ion-item>
+  </ion-list>
+  
+  <!-- Detalles de la asignatura seleccionada y QR -->
+  <div *ngIf="asignaturaSeleccionada" class="details-container">
+    <h2>Detalles de Asignatura</h2>
+    <p><strong>Nombre:</strong> {{ asignaturaSeleccionada.nombre }}</p>
+    <p><strong>ID:</strong> {{ asignaturaSeleccionada.id }}</p>
+    <p><strong>Descripción:</strong> {{ asignaturaSeleccionada.seccion }}</p>
+    
+    <!-- Código QR -->
+    <qr-code *ngIf="codigoQr" 
+             [value]="codigoQr" 
+             size="300" 
+             errorCorrectionLevel="M">
+    </qr-code>
+  </div>
+</ion-content>
+
+<style>
+  .content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .asignaturas-list {
+    width: 100%; /* Asegura que la lista use el ancho completo */
+    text-align: center; /* Centra el texto dentro de la lista */
+  }
+
+  .details-container {
+    text-align: center; /* Centra el texto en los detalles */
+    margin-top: 20px; /* Espaciado adicional para separar de la lista */
+  }
+</style>

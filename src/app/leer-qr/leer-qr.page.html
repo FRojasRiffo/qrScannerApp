@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <b>Escáner de Código QR</b>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home" text="Atrás"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="scan-section">
+    <ion-button expand="full" (click)="scanQRCode()" color="secondary">
+      <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+      Iniciar Escaneo
+    </ion-button>
+  </div>
+
+  <!-- Mostrar datos de asistencia escaneada si existen -->
+  <div *ngIf="asistenciaData" class="result-section">
+    <h2>Datos Escaneados</h2>
+    <ion-card color="light">
+      <ion-card-content>
+        <p><strong>Asignatura Escaneada:</strong> {{ asistenciaData.asignaturaId }}</p>
+        <p><strong>ID de Estudiante:</strong> {{ asistenciaData.estudianteId }}</p>
+        <p><strong>Fecha y Hora:</strong> {{ asistenciaData.fechaHora }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Mostrar mensaje de error si existe -->
+  <div *ngIf="errorMessage" class="error-section">
+    <ion-card color="danger">
+      <ion-card-content>
+        <p>{{ errorMessage }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <b>Mis asistencias</b>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="centrar">
+    <h1>Asistencias por Asignatura</h1>
+    <ion-accordion-group>
+      <ion-accordion *ngFor="let asignatura of asignaturas" [value]="asignatura.nombre">
+        <ion-item slot="header" color="light">
+          <ion-label>{{ asignatura.nombre }} ({{ asignatura.sigla }})</ion-label>
+        </ion-item>
+        <div slot="content">
+          <ion-list *ngIf="asignatura.asistencias && asignatura.asistencias.length > 0; else noAsistencias">
+            <ion-item *ngFor="let asistencia of asignatura.asistencias">
+              <ion-label>
+                  Fecha y Hora: {{ asistencia.fecha | date:'short' }} - Estado: {{ asistencia.estado }}
+              </ion-label>
+          </ion-item>
+          </ion-list>
+          <ng-template #noAsistencias>
+            <ion-label>No hay asistencias registradas.</ion-label>
+          </ng-template>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+</ion-content>
